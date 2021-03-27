@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install libogg-dev libvorbis-dev libsdl2-dev libxxf86vm-dev
+          sudo apt-get install libogg-dev libvorbis-dev libsdl2-dev libxxf86vm-dev libx11-xcb-dev
       - name: Build RetroArch
         run: |
           ./configure
