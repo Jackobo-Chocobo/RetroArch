@@ -1,0 +1,21 @@
+name: Build RetroArch
+on:
+  push:
+    branches:
+      - master
+
+jobs:   
+  v4-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build RetroArch
+        run: |
+          ./configure
+          make clean
+          make -j4
+          make DESTDIR=./linux-build install
+      - name: Upload
+        uses: actions/upload-artifact@v1.0.0  
+        with:
+          name: retroarch-linux
+          path: linux-build
