@@ -8,6 +8,8 @@ jobs:
   v4-linux:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Build RetroArch
         run: |
           ./configure
