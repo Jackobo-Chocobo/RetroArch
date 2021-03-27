@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install libogg-dev libvorbis-dev libsdl2-dev libxxf86vm-dev
       - name: Build RetroArch
         run: |
           ./configure
